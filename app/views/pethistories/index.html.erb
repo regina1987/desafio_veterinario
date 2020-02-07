@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pethistories</h1>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Alto</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Description</th>
+      <th scope="col">Pet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pethistories.each do |pethistory| %>
+      <tr>
+        <td><%= pethistory.alto %></td>
+        <td><%= pethistory.peso %></td>
+        <td><%= pethistory.description %></td>
+        <td><%= pethistory.pet.name %></td>
+        <td><%= link_to 'Show', pethistory %></td>
+        <td><%= link_to 'Edit', edit_pethistory_path(pethistory) %></td>
+        <td><%= link_to 'Destroy', pethistory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pethistory', new_pethistory_path %>
