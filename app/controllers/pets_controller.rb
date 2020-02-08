@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  before_action :set_clientes, only: [:new, :edit, :create]
 
   # GET /pets
   # GET /pets.json
@@ -69,6 +70,11 @@ class PetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params.require(:pet).permit(:name, :race, :dbay)
+      params.require(:pet).permit(:name, :race, :dbay, :cliente_id)
     end
+
+    def set_clientes
+  @clientes_array=Cliente.order(:name).pluck(:name, :telef, :mail, :id)
+  end
+
 end

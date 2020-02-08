@@ -6,4 +6,5 @@ class Cliente < ApplicationRecord
     pets.count
   end
 
+
 end

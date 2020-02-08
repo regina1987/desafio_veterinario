@@ -17,11 +17,17 @@ class Pet < ApplicationRecord
   def peso_max
     pethistories.maximum(:peso)
   end
+
   def peso_prom
+    if pethistories.count >0
         pethistories.sum(:peso)/pethistories.count
-  end
+end
+end
+
   def alto_prom
+    if pethistories.count >0
         pethistories.sum(:alto)/pethistories.count
-  end
+      end
+    end
 
 end
