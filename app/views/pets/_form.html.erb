@@ -20,6 +20,7 @@
     <%= form.label :race %>
     <%= form.text_field :race %>
   </div>
+  
   <div class="field">
     <%= form.label :dueño %>
     <%= form.select(:cliente_id,  options_for_select(@clientes_array), prompt: "Selecciona categoria")  %>

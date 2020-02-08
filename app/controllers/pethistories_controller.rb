@@ -72,6 +72,6 @@ before_action :set_pets, only: [:new, :edit, :create]
       params.require(:pethistory).permit(:alto, :peso, :description, :pet_id)
     end
     def set_pets
-  @pets_array=Pet.order(:name).pluck(:name, :race, :dbay, :id)
+  @pets_array=Pet.order(:name).pluck(:name, :race, :dbay, :id, :cliente)
   end
 end
